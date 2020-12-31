@@ -1,12 +1,12 @@
 grammar Nginx;
 
 @parser::header {
-    package com.github.odiszapc.nginxparser.antlr;
-    import com.github.odiszapc.nginxparser.*;
+    package com.inspur.icp.nginxparser.antlr;
+    import com.inspur.icp.nginxparser.*;
 }
 
 @lexer::header {
-    package com.github.odiszapc.nginxparser.antlr;
+    package com.inspur.icp.nginxparser.antlr;
 }
 
 config returns [NgxConfig ret]
