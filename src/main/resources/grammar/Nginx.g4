@@ -146,14 +146,14 @@ Value: STR_EXT | QUOTED_STRING | SINGLE_QUOTED
 
 STR_EXT
   :
-  ([a-zA-Z0-9_/\.,\-:=~+!?$&^*\[\]@|#] | NON_ASCII)+;
+  ([a-zA-Z0-9_/\.,\-:=~+!?$&^*\[\]@|#%] | NON_ASCII)+;
 
 Comment
     :
     '#' ~[\r\n]*;
 
 REGEXP_PREFIXED
-  : (RegexpPrefix)[a-zA-Z0-9_/\.,\-:=~+!?$&^*\[\]@|#)(]+
+  : (RegexpPrefix)[a-zA-Z0-9_/\.,\-:=~+!?$&^*\[\]@|#%)(]+
   ;
 
 QUOTED_STRING

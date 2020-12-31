@@ -6,8 +6,8 @@ options
 
 PARSER_BEGIN(NginxConfigParser)
 
-package com.github.odiszapc.nginxparser.parser;
-import com.github.odiszapc.nginxparser.*;
+package com.inspur.icp.nginxparser.parser;
+import com.inspur.icp.nginxparser.*;
 @SuppressWarnings("ConstantConditions")
 public class NginxConfigParser
 {

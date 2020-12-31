@@ -22,7 +22,7 @@
 
     <groupId>com.inspur.icp</groupId>
     <artifactId>nginxparser</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.7-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -52,10 +52,8 @@
             scm:git:https://github.com/tianmaomao/nginx-java-parser.git
         </developerConnection>
         <url>https://github.com/tianmaomao/nginx-java-parser</url>
-        <tag>0.0.2-SNAPSHOT</tag>
+        <tag>0.0.7-SNAPSHOT</tag>
     </scm>
-
-
 
     <!-- 发布位置配置 -->
     <distributionManagement>
@@ -168,87 +166,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <!--
-  发布命令：mvn clean deploy -P release-oss
-  https://oss.sonatype.org
-  https://oss.sonatype.org/content/repositories/snapshots/
-  -->
-    <profiles>
-        <profile>
-            <id>release-oss</id>
-            <build>
-                <plugins>
-                    <!-- Source -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>2.4</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <includePom>true</includePom>
-                        </configuration>
-                    </plugin>
-                    <!-- Javadoc -->
-                    <plugin>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.0.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <encoding>UTF-8</encoding>
-                                    <!--<additionalparam>-Xdoclint:none</additionalparam>-->
-                                    <doclint>none</doclint>
-                                    <failOnError>false</failOnError>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
-                    </plugin>
-                    <!-- GPG -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <executable>gpg</executable>
-                            <passphrase>${sonatype.gpg.passphrase}</passphrase>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>${sonatype.id}</id>
-                    <url>${sonatype.snapshots.url}</url>
-                </snapshotRepository>
-                <repository>
-                    <id>${sonatype.id}</id>
-                    <url>${sonatype.releases.url}</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
 
 </project>
