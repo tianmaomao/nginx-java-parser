@@ -17,7 +17,7 @@ Add the following dependency to your POM:
 <dependency>
     <groupId>com.inspur.icp</groupId>
     <artifactId>nginxparser</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
 
